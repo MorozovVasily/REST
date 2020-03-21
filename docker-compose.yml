@@ -1,9 +1,17 @@
 version: "3"
 
 services:
+  db:
+    image: postgres
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+
   web:
     build: .
-    command: bash -c "python manage.py migrate &&
+    command: bash -c "while !</dev/tcp/db/5432; do sleep 1; done;
+                      python manage.py migrate &&
                       python manage.py runserver 0.0.0.0:8300"
     ports:
       - "8300:8300"
+    depends_on:
+      - db

@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+# import oauth2_provider.models
 
 
 def main():
@@ -14,6 +15,14 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+    # oauth2_provider.models.Application.objects.all()
+    # oauth2_app = oauth2_provider.models.Application()
+    # oauth2_app.client_id = "id"
+    # oauth2_app.client_secret = "secret"
+    # oauth2_app.name = "name"
+    # oauth2_app.client_type = "Confidential"
+    # oauth2_app.authorization_grant_type = "Resource owner password-based"
+    # oauth2_app.save()
     execute_from_command_line(sys.argv)
 
 

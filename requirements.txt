@@ -1,6 +1,5 @@
 Django
 djangorestframework
-markdown
 django-filter
-pygments
 django-oauth-toolkit
+psycopg2
