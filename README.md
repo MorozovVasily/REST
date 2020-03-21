@@ -23,5 +23,5 @@ curl -X POST -d "grant_type=refresh_token&refresh_token=<your_refresh_token>&cli
 Сайт поднимется на  http://127.0.0.1:8300/  
 
 Есть пагинация (в данный момент 3 обекта на страницу)  
-Все хранится в базе данных SQLite  
+Все хранится в базе данных PostgreSQL  
 При запуске docker-compose в консоль пишутся все логи обращений к api
