@@ -15,3 +15,16 @@ services:
       - "8300:8300"
     depends_on:
       - db
+      - rabbitmq
+
+  rabbitmq:
+    image: 'rabbitmq:latest'
+    ports:
+      - '5672:5672'
+
+  notify:
+    build:
+      context: ./notify
+    command: python main.py
+    depends_on:
+      - rabbitmq

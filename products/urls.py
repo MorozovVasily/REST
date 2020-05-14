@@ -3,7 +3,7 @@ from django.urls import path
 from rest_framework.routers import DefaultRouter
 import oauth2_provider.models
 
-from .views import ProductViewSet, UserCreate, UserViewSet
+from .views import ProductViewSet, UserCreate, UserViewSet, activate
 
 try:
     oauth2_app = oauth2_provider.models.Application()
@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('createUser/', UserCreate.as_view()),
     path('oauth/', include('oauth2_provider.urls')),
+    path('activate/<int:pk>/<str:token>/', activate)
 ]

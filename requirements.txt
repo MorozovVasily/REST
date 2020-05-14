@@ -3,3 +3,5 @@ djangorestframework
 django-filter
 django-oauth-toolkit
 psycopg2
+flask
+pika
